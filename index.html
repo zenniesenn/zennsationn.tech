@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Zenn's Nieuwshaven</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏴‍☠️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="waves" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="hello">Ahoy <span id="kid-name">Zenn</span>! 👋</p>
+      <h1>Zenn's Nieuwshaven</h1>
+      <p class="sub">Al het nieuws over <b>One Piece</b>, de <b>One Piece kaarten</b> en <b>Roblox</b> op één plek!</p>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Kies een onderwerp">
+    <button class="tab active" data-cat="all"><span class="emo">⭐</span>Alles</button>
+    <button class="tab op" data-cat="onepiece"><span class="emo">🏴‍☠️</span>One Piece</button>
+    <button class="tab tcg" data-cat="tcg"><span class="emo">🃏</span>Kaarten</button>
+    <button class="tab rb" data-cat="roblox"><span class="emo">🧱</span>Roblox</button>
+  </nav>
+
+  <main>
+    <section class="tip" id="tip" aria-live="polite">
+      <div class="tip-emo" id="tip-emo">💡</div>
+      <div>
+        <p class="tip-label" id="tip-label">Weetje</p>
+        <p class="tip-text" id="tip-text"></p>
+      </div>
+      <button class="tip-next" id="tip-next" aria-label="Nog een weetje">🔄</button>
+    </section>
+
+    <div class="controls">
+      <label class="switch"><input type="checkbox" id="only-nl"><span class="slider"></span>Alleen Nederlands nieuws</label>
+      <label class="switch"><input type="checkbox" id="show-spoilers"><span class="slider"></span>🙈 Spoilers laten zien</label>
+    </div>
+
+    <p class="status" id="status">Nieuws aan het laden… ⛵</p>
+    <div class="grid" id="grid"></div>
+    <button class="more" id="more" hidden>Meer nieuws laden ⬇️</button>
+  </main>
+
+  <footer>
+    <p class="updated" id="updated"></p>
+    <details>
+      <summary>👨‍👩‍👦 Voor ouders</summary>
+      <p>Deze site laat alleen <b>koppen van nieuwsberichten</b> zien over One Piece, de One Piece Card Game en Roblox. Er zijn geen reclames, geen accounts, geen chat en geen tracking.</p>
+      <p>Berichten met woorden over bijvoorbeeld rechtszaken, geweld, griezelspellen, gokken of 18+ worden automatisch weggefilterd. Berichten over manga-spoilers zijn standaard verborgen. Het filter is automatisch en daardoor niet perfect.</p>
+      <p>Bij het klikken op een bericht krijgt je kind eerst een melding dat hij naar een andere website gaat. Die websites kunnen wél reclame bevatten.</p>
+    </details>
+  </footer>
+
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <div class="modal-emo">🧭</div>
+      <h2 id="modal-title">Je gaat naar een andere website!</h2>
+      <p>Dit bericht staat op <b id="modal-source"></b>.</p>
+      <ul>
+        <li>Daar kan reclame staan. Klik daar niet zomaar op.</li>
+        <li>Vul nooit je wachtwoord of naam in.</li>
+        <li>Zie je iets raars of engs? Vertel het papa of mama!</li>
+      </ul>
+      <div class="modal-btns">
+        <button class="btn-no" id="modal-no">⬅️ Nee, terug</button>
+        <a class="btn-yes" id="modal-yes" target="_blank" rel="noopener noreferrer">Ja, lees verder ➡️</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
