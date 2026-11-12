@@ -7,15 +7,14 @@ Kindvriendelijke nieuwssite over One Piece, de One Piece Card Game en Roblox.
 - `news.json` — het nieuws (wordt gemaakt door het script)
 - `scripts/fetch-news.mjs` — haalt nieuws op via Google News en filtert ongeschikte berichten
 - `.github/workflows/update-news.yml` — ververst het nieuws elke 3 uur en publiceert op GitHub Pages
-- `CNAME` — koppelt de site aan zennsationn.tech
+- `CNAME` — koppelt de site aan zenn.zennsationn.tech
 
 ## Online zetten (GitHub Pages, gratis)
 1. Maak een GitHub-repository en upload deze map (branch `main`).
 2. Repository → Settings → Pages → Source: **GitHub Actions**.
-3. Settings → Pages → Custom domain: `zennsationn.tech`, vink **Enforce HTTPS** aan.
-4. Bij je domeinregistrar (DNS): vier A-records voor `@` naar
-   185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
-   en een CNAME-record `www` → `<jouw-github-naam>.github.io`.
+3. Settings → Pages → Custom domain: `zenn.zennsationn.tech`, vink **Enforce HTTPS** aan.
+4. In Cloudflare (DNS van zennsationn.tech): CNAME-record `zenn` → `zenniesenn.github.io`, Proxy status **DNS only** (grijze wolk).
+   De rest van het domein (en de mail via TransIP) blijft ongewijzigd.
 
 ## Andere hosting
 Upload alle bestanden naar de webroot en laat `node scripts/fetch-news.mjs` een paar keer per dag draaien (cron).
